@@ -39,13 +39,16 @@ export default function Home() {
     setCases([...cases]);
   }
 
+  const totalCompleted = totalCaseCount - cases.length - 1;
+  const percentageCorrect = !totalCompleted ? 0 : Math.round(((totalCorrectCount / totalCompleted) * 100) * 100) / 100;
+
   return (
     <main className="h-screen grid grid-rows-6">
       {
         cases.length ? 
           <div className="absolute float-right">
             <p>{`Remaining: ${cases.length + 1} / ${totalCaseCount}`}</p>
-            <p>{`Correct: ${totalCorrectCount} / ${totalCaseCount}`}</p>
+            <p>{`Correct: ${totalCorrectCount} / ${totalCompleted} (${percentageCorrect}%)`}</p>
           </div>
         : null
       }
