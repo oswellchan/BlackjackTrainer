@@ -43,7 +43,7 @@ export default function Home() {
   const percentageCorrect = !totalCompleted ? 0 : Math.round(((totalCorrectCount / totalCompleted) * 100) * 100) / 100;
 
   return (
-    <main className="h-screen grid grid-rows-6">
+    <main className="grid grid-rows-6">
       {
         cases.length ? 
           <div className="absolute float-right">
